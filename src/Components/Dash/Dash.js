@@ -65,18 +65,20 @@ class Dash extends Component {
     let { loading, search, posts, myPosts, oldestFirst } = this.state
 
     let mappedPosts = posts.map(post => {
-      return <div className='content-box dash-post-box' key={post.post_id}>
-        <Link to={`/post/${post.post_id}`}>
-          <h3>{post.title}</h3>
+      const {post_id, author_username, profile_pic, title} =post 
+      console.log(post_id)
+      return <div className='content-box dash-post-box' key={post_id}>
+        <Link to={`/post/${post_id}`}>
+          <h3>{title}</h3>
         </Link>
         {
           post.author_username === this.props.username
             ?
-            <button onClick={_ => this.deletePost(post.post_id)}>delete your post</button>
+            <button onClick={() => this.deletePost(post_id)}>delete your post</button>
             :
             <div className='author-box'>
-              <p>by {post.author_username}</p>
-              <img src={post.profile_pic} alt='author' />
+              <p>by {author_username}</p>
+              <img src={profile_pic} alt='author' />
             </div>
         }
       </div>
@@ -119,4 +121,4 @@ function mapStateToProps(state) {
   return state;
 }
 
-export default connect(mapStateToProps)(Dash);
+export default connect(mapStateToProps())(Dash);

@@ -18,6 +18,7 @@ class Post extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props.match.params.post_id)
     axios.get(`/api/post/${this.props.match.params.post_id}`)
       .then(res => {
         this.setState({ ...res.data, loading: false })
