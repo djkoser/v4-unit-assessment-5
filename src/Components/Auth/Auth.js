@@ -65,11 +65,11 @@ class Auth extends Component {
           <h1 className='auth-title'>Helo</h1>
           {this.state.errorMsg && <h3 className='auth-error-msg'>{this.state.errorMsg} <span onClick={this.closeErrorMessage}>X</span></h3>}
           <div className='auth-input-box'>
-            <p>Username:</p>
+            <p id="usernameLabel">Username:</p>
             <input value={this.state.username} onChange={e => this.handleChange('username', e.target.value)} />
           </div>
           <div className='auth-input-box'>
-            <p>Password:</p>
+            <p id="passwordLabel">Password:</p>
             <input value={this.state.password} type='password' onChange={e => this.handleChange('password', e.target.value)} />
           </div>
           <div className='auth-button-container'>
