@@ -88,8 +88,8 @@ class Dash extends Component {
         <div className='content-box dash-filter'>
           <div className='dash-search-box'>
             <input value={search} onChange={e => this.setState({ search: e.target.value })} className='dash-search-bar' placeholder='Search by Title' />
-            <button onClick={this.grabPosts} className='dark-button'>Search</button>
-            <button onClick={this.reset} className='dark-button'>Reset</button>
+            <button onClick={this.grabPosts} id='search-button' className='dark-button'>Search</button>
+            <button onClick={this.reset} id='reset-button' className='dark-button'>Reset</button>
           </div>
           <div className='dash-check-box'>
             <p>Show My Posts</p>

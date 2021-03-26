@@ -60,7 +60,7 @@ class Auth extends Component {
   render() {
     return (
       <div className='auth'>
-        <div className='auth-container'>
+        <div id="auth-container" className='auth-container'>
           <img src={logo} alt='logo' />
           <h1 className='auth-title'>Helo</h1>
           {this.state.errorMsg && <h3 className='auth-error-msg'>{this.state.errorMsg} <span onClick={this.closeErrorMessage}>X</span></h3>}

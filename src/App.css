@@ -1,3 +1,53 @@
+@media(max-width: 800px) {
+  #dash {
+    width: 100%;
+  }
+  .dash-search-box {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+  .content-box {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 5px;
+    width: 90%;
+    align-items: center;
+  }
+  #search-button, #reset-button {
+    margin: 10px;
+    position: relative;
+  }
+  #navBox {
+    width: 80px;
+  }
+}
+
+@media(max-width:600px) {
+  #usernameLabel, #passwordLabel {
+    font-size: 10pt;
+  }
+  .auth-title {
+    font-size: 70px;
+    font-weight: 650;
+  }
+  #usernameLabel, #passwordLabel {
+    font-size: 10pt;
+  }
+  #auth-container {
+    box-shadow: none;
+    background-image: none;
+  }
+  .dark-button {
+    font-size: 9pt;
+    margin: 30px;
+  }
+  .title {
+    font-size:24pt
+  }
+}
+
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 .App {
   padding: 20px 20px 20px 100px;
@@ -84,3 +134,8 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+p {
+  display:inline-block;
+}
+
