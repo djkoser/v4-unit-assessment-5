@@ -24,7 +24,7 @@ class Nav extends Component {
     axios.get('/api/auth/me')
       .then(res =>{ 
         const {profile_pic, username} = res.data;
-        this.props.updateUser({profilePicture:profile_pic, username})})
+        this.props.updateUser({username, profilePicture:profile_pic})})
   }
 
   logout() {
