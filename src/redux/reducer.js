@@ -21,10 +21,11 @@ export const logout = () => {
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case UPDATE_USER:
-      state = {...state,...action.payload}; 
+      const {username, profilePicture} = action.payload
+      state = {...state,...{username, profilePicture}}; 
       return state; 
     case LOGOUT:
-      state = {username:"", profilePicture:""};
+      state = {...state, ...{username:"", profilePicture:""}};
       return state;
     default:
       console.log(`${action.type} is not a valid case`);

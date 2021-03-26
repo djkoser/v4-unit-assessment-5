@@ -65,8 +65,7 @@ class Dash extends Component {
     let { loading, search, posts, myPosts, oldestFirst } = this.state
 
     let mappedPosts = posts.map(post => {
-      const {post_id, author_username, profile_pic, title} =post 
-      console.log(post_id)
+      const {post_id, author_username, profile_pic, title} =post;
       return <div className='content-box dash-post-box' key={post_id}>
         <Link to={`/post/${post_id}`}>
           <h3>{title}</h3>
@@ -121,4 +120,4 @@ function mapStateToProps(state) {
   return state;
 }
 
-export default connect(mapStateToProps())(Dash);
+export default connect(mapStateToProps)(Dash);
