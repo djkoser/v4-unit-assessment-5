@@ -5,13 +5,13 @@ module.exports = {
     const db = req.app.get('db');
     const { username, password } = req.body;
     try {
-      const [userInfo] = await db.user.find_user_by_username(username);
-      if (!userInfo) {
+      if ((await db.user.find_user_by_username(username)).length ===0) {
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(password, salt);
 
         const [newUser] = await db.user.create_user(username, hash, `https://robohash.org/${username}.png`);
-        req.session.user = { ...{ username: newUser.username, profile_pic: newUser.profile_pic } };
+        const [userInfo] = await db.user.find_user_by_username(username);
+        req.session.user = { ...{id:userInfo.id, username: newUser.username, profile_pic: newUser.profile_pic } };
 
         return res.status(200).send(newUser)
       } else {
