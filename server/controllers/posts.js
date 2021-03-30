@@ -40,7 +40,6 @@ module.exports = {
   createPost: async (req, res) => {
     const db = await req.app.get('db')
     const { id } = req.session.user;
-    console.log(req.session.user.id)
     const { title, img, content } = req.body;
     const date = new Date;
     if (id) {
